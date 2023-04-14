@@ -1,0 +1,18 @@
+import random
+
+tolleranz = 0.001
+nennwert = 2
+idealmaß = 6
+abweichung = 0.0016
+experiments = 100000
+hit = 0
+
+for i in range(experiments):
+    l1 = 2 - (tolleranz) + (2 * tolleranz) * random.uniform(0,1)
+    l2 = 2 - (tolleranz) + (2 * tolleranz) * random.uniform(0,1)
+    l3 = 2 - (tolleranz) + (2 * tolleranz) * random.uniform(0,1)
+    summe = l1 + l2 + l3 
+    if abs((summe - idealmaß)) > abweichung:
+        hit +=1
+print('Hits:    ' + str(hit))
+print('WSK:     ' + str(hit/experiments))
