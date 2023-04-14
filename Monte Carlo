@@ -14,5 +14,6 @@ for i in range(experiments):
     summe = l1 + l2 + l3 
     if abs((summe - idealmaß)) > abweichung:
         hit +=1
+
 print('Hits:    ' + str(hit))
 print('WSK:     ' + str(hit/experiments))
