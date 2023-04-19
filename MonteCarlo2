@@ -1,0 +1,21 @@
+import random
+import matplotlib.pyplot as plt 
+
+tolvorgabe = 8
+abweichung = 1
+idealmass  = 19
+nennwert = 20          #Takt
+experiments = 10000
+
+hit = 0
+nums = [0]
+for i in range(experiments):
+    summe= nennwert + random.expovariate(1)
+    nums.append(summe) 
+    if abs((summe - idealmass)) > abweichung:
+        hit +=1
+print(hit)
+print(hit/experiments)
+
+plt.plot(nums) 
+plt.show()
